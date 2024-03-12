@@ -1,21 +1,71 @@
 
 import java.util.Scanner;
 public class CombatResults {
+    int wounds=0;
+    int rake=0;
+    int standard=0;
+    int battleStandard=0;
+    int flankAttack=0;
+    int rearAttack=0;
+    int highGround=0;
+    int overKill=0;
+    static int attackerResult=0;
+    static int defenderResult=0;
+    public static int attackerResults(){
+        Scanner attacker = new Scanner(System.in);
+        System.out.println("Attacker, please ask these questions.");
+        System.out.println("How many wounds did you do to the unit?");
+        int wounds = attacker.nextInt();
+        System.out.println("How many rakes do you have?");
+        int rake = attacker.nextInt();
+        System.out.println("Do you have a standard, enter 1 or 0?");
+        int standard = attacker.nextInt();
+        System.out.println("Do you have a battle standard, enter 1 or 0?");
+        int battleStandard = attacker.nextInt();
+        System.out.println("Did you attack the flank, 1 for yes, 0 for no?");
+        int flankAttack = attacker.nextInt();
+        System.out.println("Did you attack the rear, 2 for yes, 0 for no?");
+        int rearAttack = attacker.nextInt();
+        System.out.println("Are you on the high ground, 1 for yes, 0 for no?");
+        int highGround = attacker.nextInt();
+        System.out.println("How many wounds did you do for overkill?");
+        int overKill = attacker.nextInt();
 
+        return attackerResult=wounds+rake+standard+battleStandard+flankAttack+rearAttack+highGround+overKill;
 
+    }
+    public static int defenderResults(){
+        Scanner attacker = new Scanner(System.in);
+        System.out.println("Defender, please ask these questions.");
+        System.out.println("How many wounds did you do to the unit?");
+        int wounds = attacker.nextInt();
+        System.out.println("How many rakes do you have?");
+        int rake = attacker.nextInt();
+        System.out.println("Do you have a standard, enter 1 or 0?");
+        int standard = attacker.nextInt();
+        System.out.println("Do you have a battle standard, enter 1 or 0?");
+        int battleStandard = attacker.nextInt();
+        System.out.println("Did you attack the flank, 1 for yes, 0 for no?");
+        int flankAttack = attacker.nextInt();
+        System.out.println("Did you attack the rear, 2 for yes, 0 for no?");
+        int rearAttack = attacker.nextInt();
+        System.out.println("Are you on the high ground, 1 for yes, 0 for no?");
+        int highGround = attacker.nextInt();
+        System.out.println("How many wounds did you do for overkill?");
+        int overKill = attacker.nextInt();
+
+        return defenderResult=wounds+rake+standard+battleStandard+flankAttack+rearAttack+highGround+overKill;
+
+    }
 
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
 
-            System.out.println("Welcome to Combat Game!");
+            System.out.println(attackerResults());
 
-            // Attacker enters combat result
-            System.out.print("Attacker, enter your combat result: ");
-            int attackerResult = scanner.nextInt();
 
             // Defender enters combat result
-            System.out.print("Defender, enter your combat result: ");
-            int defenderResult = scanner.nextInt();
+            System.out.print(defenderResults());
 
             // Compare combat results
             int result = attackerResult - defenderResult;
