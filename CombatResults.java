@@ -193,10 +193,11 @@ public class CombatResults extends JFrame {
                                 int flankAttack, int rearAttack, int highGround, int overKill) {
         return wounds + rake + standard + battleStandard + flankAttack + rearAttack + highGround + overKill;
     }
-
-    public static void main(String[] args) {
+}
+   /* public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             new CombatResults().setVisible(true);
         });
     }
 }
+*/
