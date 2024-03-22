@@ -128,12 +128,17 @@ public class CombatResults extends JFrame {
         JTextField overKillDefenderField = addTextField(defenderPanel, "How many wounds did you do for overkill?", "0");
 
         JButton calculateButton = new JButton("Calculate");
-        add(calculateButton, BorderLayout.SOUTH);
-
+        add(calculateButton, BorderLayout.NORTH);
+        JButton returnButton = new JButton("Return to Main Menu");
+        add(returnButton, BorderLayout.SOUTH);
         JTextArea resultArea = new JTextArea(10, 30);
         JScrollPane scrollPane = new JScrollPane(resultArea);
         add(scrollPane, BorderLayout.CENTER);
 
+        returnButton.addActionListener(e -> {
+            System.out.println("oops");
+            setVisible(false);
+        });
         calculateButton.addActionListener(e -> {
             attackerResult = calculateResult(
                     getIntValue(woundsAttackerField),
@@ -193,7 +198,10 @@ public class CombatResults extends JFrame {
                                 int flankAttack, int rearAttack, int highGround, int overKill) {
         return wounds + rake + standard + battleStandard + flankAttack + rearAttack + highGround + overKill;
     }
-}
+
+
+    }
+
    /* public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             new CombatResults().setVisible(true);
